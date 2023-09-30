@@ -1,5 +1,4 @@
 public class Medicine {
-
     private int medicineId;
     private String medicineName;
     private float price;
@@ -55,16 +54,5 @@ public class Medicine {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "Medicine{" +
-                "medicineId=" + medicineId +
-                ", medicineName='" + medicineName + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                ", description='" + description + '\'' +
-                '}';
     }
 }
