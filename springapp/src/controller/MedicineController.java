@@ -1,4 +1,5 @@
 @RestController
+@RequestMapping("/medicines")
 public class MedicineController {
 
     private final MedicineService medicineService;
@@ -7,13 +8,13 @@ public class MedicineController {
         this.medicineService = medicineService;
     }
 
-    @PostMapping("/medicines")
+    @PostMapping
     public ResponseEntity<Boolean> addMedicine(@RequestBody Medicine medicine) {
-        boolean isMedicineAdded = medicineService.addMedicine(medicine);
-        return ResponseEntity.ok(isMedicineAdded);
+        boolean medicineAdded = medicineService.addMedicine(medicine);
+        return ResponseEntity.ok(medicineAdded);
     }
 
-    @PutMapping("/medicines/{medicineId}")
+    @PutMapping("/{medicineId}")
     public ResponseEntity<Medicine> updateMedicine(@PathVariable int medicineId, @RequestBody Medicine medicine) {
         Medicine updatedMedicine = medicineService.updateMedicine(medicineId, medicine);
         return ResponseEntity.ok(updatedMedicine);
